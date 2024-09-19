@@ -3,7 +3,7 @@ function CharacterCard({info}) {
 
   return (
    <li>
-      <p>Photo:{info.image}</p>
+      <img src={data.image} alt=""/>
       <p>Name:{info.name}</p>
       <p>Species:{info.species}</p>
       <p>House:{info.house}</p>
