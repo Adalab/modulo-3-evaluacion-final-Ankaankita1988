@@ -1,5 +1,5 @@
 
-function FilterByHome(changeHome, filterHome) {
+function FilterByHome({changeHome, filterHome}) {
 
   const handleChange =(ev) =>{
     changeHome(ev.target.value)

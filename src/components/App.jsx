@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import getDataApi from "../services/api";
 import CharacterList from "./CharacterList";
 import Filter from "./Filter";
+import { Route, Routes } from "react-router-dom";
+
 
 function App() {
   const [list, setList] = useState([]);
@@ -26,14 +28,19 @@ function App() {
     item.name.toLowerCase().includes(filterName.toLowerCase())
   )
 
-   .filter (item =>  item.home === filterHome)
-    
+   .filter (item => {
+      return  item.house === filterHome
+   }
+   )
   
   return (
     <>
       <h1>Harry Potter Characters</h1>
         <Filter changeName={changeName}  filterName={filterName} changeHome={changeHome} filterHome={filterHome}/>
-       < CharacterList list={filteredList} />
+      
+        <Routes>
+        <Route path="/" element={ <CharacterList list={filteredList} />} />
+       </Routes>
      </>
   )
 }
